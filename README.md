@@ -1,6 +1,3 @@
-Here’s your content structured into a clean **README.md** format:
-
-```markdown
 # Azure Resource Setup & Role Assignments – User Guide  
 
 This guide provides step-by-step instructions for provisioning key Azure resources and assigning appropriate IAM roles.  
@@ -206,6 +203,3 @@ This guide provides step-by-step instructions for provisioning key Azure resourc
 🔗 [Create Cosmos DB Resource](https://learn.microsoft.com/en-us/azure/cosmos-db/create-cosmosdb-resources-portal)  
 
 ---
-```
-
-Would you like me to also **add an overview table at the top** (summarizing each service with goal + key roles), so readers can quickly scan before diving into details?
