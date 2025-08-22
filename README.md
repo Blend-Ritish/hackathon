@@ -225,7 +225,7 @@ Open PowerShell5.
 
 Run the following commands: 
 
-powershell 
+**powershell**
 
 winget search Microsoft.PowerShell 
 
@@ -235,7 +235,7 @@ For reference, here is a YouTube tutorial:  https://www.youtube.com/watch?v=BYUH
 
 To install Azure CLI on Windows using PowerShell, run: 
 
-powershell 
+**powershell** 
 
 $ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'; Remove-Item .\AzureCLI.msi 
 
@@ -251,28 +251,12 @@ You must be logged into Azure CLI with appropriate credentials.
 
 Prepare a CSV file named input_details.csv with the following columns and sample data: 
 
-DisplayName 
-
-UserPrincipalName 
-
-rgname 
-
-Location 
-
-demo1 
-
-demo1@bloodwarriors.in 
-
-demo1-rg 
-
-eastus 
+DisplayName | UserPrincipalName      | rgname | Location | 
+demo1       | demo1@bloodwarriors.in | demo1-rg | eastus 
 
 rgname: Azure Resource Group name 
-
 DisplayName: User display name 
-
 UserPrincipalName: User email (e.g., demo1@bloodwarriors.in) 
-
 Location: Azure region where AI Foundry will be deployed. Save this CSV file in the same directory as your deployment script. 
 
 **3. Deployment Steps**
