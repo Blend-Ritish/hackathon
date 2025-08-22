@@ -206,14 +206,14 @@ This guide provides step-by-step instructions for provisioning key Azure resourc
 
 ## 12. Azure AI FOUNDRY 
 
-**1. Overview **
+**1. Overview**
 
 This document explains how to deploy Azure AI Foundry (Cognitive Services accounts of kind AIServices) across multiple resource groups using a PowerShell script. 
 The script reads a CSV with resource group names and locations, then creates AI Foundry accounts in parallel with throttling to avoid Azure API limits. 
 
 **2. Prerequisites** 
 
-**2.1 System Requirements **
+**2.1 System Requirements**
 
 Operating System: Windows 10 or Windows 11 
 
@@ -247,7 +247,7 @@ Ensure you have an Azure subscription with Contributor or Owner role on the reso
 
 You must be logged into Azure CLI with appropriate credentials. 
 
-**2.3 CSV Input File **
+**2.3 CSV Input File**
 
 Prepare a CSV file named input_details.csv with the following columns and sample data: 
 
@@ -275,7 +275,7 @@ UserPrincipalName: User email (e.g., demo1@bloodwarriors.in)
 
 Location: Azure region where AI Foundry will be deployed. Save this CSV file in the same directory as your deployment script. 
 
-**3. Deployment Steps **
+**3. Deployment Steps**
 
 Step 1: Clone or Create the Deployment Script 
 Save the deployment script as deploy-ai-foundry.ps1 in your working directory. 
@@ -295,7 +295,7 @@ Execute the script by running:
 
 .\deploy-ai-foundry.ps1 
 
-**4. Output **
+**4. Output**
 
 The AI Foundry accounts will be created in each specified resource group. For example, account names will follow this format: 
 demo1-ai-foundry 
