@@ -203,3 +203,109 @@ This guide provides step-by-step instructions for provisioning key Azure resourc
 🔗 [Create Cosmos DB Resource](https://learn.microsoft.com/en-us/azure/cosmos-db/create-cosmosdb-resources-portal)  
 
 ---
+
+## 12. Azure AI FOUNDRY 
+
+**1. Overview **
+
+This document explains how to deploy Azure AI Foundry (Cognitive Services accounts of kind AIServices) across multiple resource groups using a PowerShell script. 
+The script reads a CSV with resource group names and locations, then creates AI Foundry accounts in parallel with throttling to avoid Azure API limits. 
+
+**2. Prerequisites** 
+
+**2.1 System Requirements **
+
+Operating System: Windows 10 or Windows 11 
+
+Software Installation: 
+
+To install PowerShell7 using Winget: 
+
+Open PowerShell5. 
+
+Run the following commands: 
+
+powershell 
+
+winget search Microsoft.PowerShell 
+
+winget install --id Microsoft.PowerShell --source winget  
+
+For reference, here is a YouTube tutorial:  https://www.youtube.com/watch?v=BYUHFb3PwoE 
+
+To install Azure CLI on Windows using PowerShell, run: 
+
+powershell 
+
+$ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'; Remove-Item .\AzureCLI.msi 
+
+For guidance, see this video: https://www.youtube.com/watch?v=PP2ymD7rRWE 
+
+**2.2 Permissions** 
+
+Ensure you have an Azure subscription with Contributor or Owner role on the resource groups where AI Foundry will be deployed. (Permissions should already be assigned to all users.) 
+
+You must be logged into Azure CLI with appropriate credentials. 
+
+**2.3 CSV Input File **
+
+Prepare a CSV file named input_details.csv with the following columns and sample data: 
+
+DisplayName 
+
+UserPrincipalName 
+
+rgname 
+
+Location 
+
+demo1 
+
+demo1@bloodwarriors.in 
+
+demo1-rg 
+
+eastus 
+
+rgname: Azure Resource Group name 
+
+DisplayName: User display name 
+
+UserPrincipalName: User email (e.g., demo1@bloodwarriors.in) 
+
+Location: Azure region where AI Foundry will be deployed. Save this CSV file in the same directory as your deployment script. 
+
+**3. Deployment Steps **
+
+Step 1: Clone or Create the Deployment Script 
+Save the deployment script as deploy-ai-foundry.ps1 in your working directory. 
+
+Step 2: Prepare the CSV File 
+Ensure the input_details.csv file is ready with the required resource groups and location data as described. 
+
+Step 3: Log In to Azure 
+Open PowerShell and use the following command to log in: 
+
+az login -> Prompt -> Login with User Credentials 
+
+az account set --subscription "dfcd9032-9c16-4e4c-a6f1-92f202ad529b" 
+
+Step 4: Run the Deployment Script 
+Execute the script by running: 
+
+.\deploy-ai-foundry.ps1 
+
+**4. Output **
+
+The AI Foundry accounts will be created in each specified resource group. For example, account names will follow this format: 
+demo1-ai-foundry 
+
+---
+  
+## Regions Suggestions:   
+
+1. EastUS  
+2. WestUS  
+3. West Europe  
+4. North Europe  
+5. Central US  
